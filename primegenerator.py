@@ -40,4 +40,5 @@ def get_prime_number():
         else:
             print("Prime")
     print("n = " + str(n) + " a = " + str(a))
+    return n
 get_prime_number()
