@@ -9,21 +9,11 @@ from tkinter import N
 # a^n % n == a mod n (ex. n = 5, then a E [1,2,3,4])
 # same as: a^(n-1) = 1
 
-# ex: n = 2
-#     a = 1
-#     1^(2-1) = 1
-
-
 # 1) Generate n
 # 2) Generate a (a E [1, n-1])
 # 3) Test if n is prime (a ** (n-1)) % n != 1
 # 4) if YES, save n as p or q (Return true)
 # 5) if no, return false (repeat algorithm, new int)
-
-
-p = -1
-q = -1
-primeNumber = 0
 
 def get_prime_number():
     min = 21
@@ -37,15 +27,22 @@ def get_prime_number():
     
     print("n = " + str(n) + " a = " + str(a))
 
-    for i in range(1, 3):
-        if (a ** (n-1)) % n != 1:   # If != 1, then NOT prime
-            test = False
-            break
-    if not test:
-        print("Not prime")
+    if (n % 2 == 0):
+        return(get_prime_number())
     else:
-        print("prime")
-        return p, q
+        for i in range(1, 3):
+            if (a ** (n-1)) % n != 1:   # If != 1, then NOT prime
+                test = False
+                break
+        if test == False:
+            print("Not prime")
+            return(get_prime_number())
+        else:
+            print("prime")
+            primeNumber = n
+            return primeNumber
+        
 
-p, q = get_prime_number()
+#primeNumber = get_prime_number()
+#p = primeNumber
 #print("p = " + str(p))
