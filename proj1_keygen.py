@@ -43,7 +43,7 @@ def extended_gcd(a =1, b = 1):
 # input public key and phi of initial prime numbers
 # finds private key d using extended euclid's algorithm
 # -- needs to fulfill ed mod phi = 1 --
-def getPrivateKey(e, phi):
+def getPrivateKey(phi, e):
     d = extended_gcd(e, phi)
     (x, y, gcd) = d
     key = x % phi 
