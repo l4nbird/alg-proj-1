@@ -6,12 +6,14 @@ primeNumber = -1
 p = -1
 q = -1
 
-primeNumber = get_prime_number()
-p = primeNumber
-primeNumber = get_prime_number()
-q = primeNumber
 
-print("p = " + str(p) + " q = " + str(q))
+for i in range(0, 2):
+  primeNumber = get_prime_number()
+  p = primeNumber
+  primeNumber = get_prime_number()
+  q = primeNumber
+
+  print("p = " + str(p) + " q = " + str(q))
 
 msg = 12
 
