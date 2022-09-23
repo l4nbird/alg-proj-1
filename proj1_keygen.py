@@ -1,5 +1,7 @@
 import math
+from operator import truediv
 import random
+from Fast_Expo_encrypt_decrypt import *
 
 # takes two prime numbers over 1
 # finds phi of prime numbers and a relative prime of phi, returns relative prime
@@ -48,3 +50,46 @@ def getPrivateKey(phi, e):
     (x, y, gcd) = d
     key = x % phi 
     return key
+
+def public_user(e, n):
+    loop = True
+
+    while loop != False:
+        print("As a public user, what would you like to do?\n       1. Send an encrypted message\n      2. Authenticate a digital signature")
+        print("     3. Exit\n")
+        selection = input()
+
+        if selection == 1:
+            msg = input("Enter a message: ")
+            enc_msg = encode_str(msg, e, n)
+            print("Message encrypted and sent.")
+        elif selection == 2:
+            # authenticate signature
+            print("yay")
+        elif selection == 3:
+            loop = False
+    if enc_msg:
+        return enc_msg
+    else:
+        return None
+
+def owner(n, d, msg):
+    loop = True
+
+    while loop != False:
+        print("As the owner of the keys, what would you like to do?\n       1. Decrypt a received message\n      2. Digitally sign a message")
+        print("     3. Exit\n")
+        selection = input()
+
+        if selection == 1:
+            dec_msg = decode_str(msg, d, n)
+            print("Decrypted message: " + to_char(dec_msg))
+        elif selection == 2:
+            # Digitally sign a message
+            signature = input("Enter a message: ")
+            #encrypt signature with signature^d mod n
+        elif selection == 3:
+            loop = False
+    if signature:
+        return signature
+    else: return None
