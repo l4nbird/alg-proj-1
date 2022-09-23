@@ -18,15 +18,16 @@ from webbrowser import get
 
 
 # A function to generate a list of 20 potential prime numbers and 20 A's
-def get_numbers(x = 1000000):  # n = 1,000,000
+def get_numbers():  # n = 1,000,000
 
+    x = 1000000
     # List initializing
     primeNumList = []           
     a_list = []
     n = random.randint(x, 10*x) # Get random integer between 1,000,000 and 10n
 
 
-    while len(primeNumList) <= 20:
+    while len(primeNumList) < 40:
         if (n % 2) != 0 and (n % 3) != 0 and (n % 5) != 0:  # Quickens the process, removes known factors 
             primeNumList.append(n)                          # If it passes the parameters, add it to the primeNumList
             a = random.randint(2, n-1)                      # generates a
@@ -39,26 +40,35 @@ def get_numbers(x = 1000000):  # n = 1,000,000
     return primeNumList, a_list
 
 
-def test_prime_number(a_list, primeNumList):
-    min = 2
-    test = True
+def test_prime_number(primeNumList, a_list):
     prime = []
     for (a, b) in zip(a_list, primeNumList):                # Fermat's primality test
         if pow(a, b-1, b) == 1:   # If != 1, then NOT prime
             prime.append(b)
-
+    print("PRIME LIST")
+    [print(i) for i in prime] 
     return prime
 
 
 def get_p_and_q(prime):      # Get p and q from prime list
     p = prime.pop()
     q = prime.pop()
-    
+
     return p, q
 
 
-def call_prime_functions():
-    get_numbers()
-    test_prime_number()
-    get_p_and_q()
+#def call_prime_functions():
+    #get_numbers()
+   # test_prime_number()
+   # get_p_and_q()
 
+
+primeNumList, a_list = get_numbers()
+prime = test_prime_number(primeNumList, a_list)
+p, q = get_p_and_q(prime)
+#print("p: " + str(p) + " q: " + str(q))
+
+
+#[print(i) for i in primeNumList]  
+#print("A follows: ")
+#[print(i) for i in a_list] 
