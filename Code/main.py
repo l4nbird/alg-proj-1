@@ -16,9 +16,9 @@ phi = (p-1)*(q-1)
 d = getPrivateKey(phi, e)
 
 # Initialize other info
-signature = None
-sig_msg = None
-enc_msg = None
+signature = []
+sig_msg = []
+enc_msg = []
 
 
 print('RSA keys have been generated.')
@@ -36,3 +36,4 @@ while loop == True:
     signature, sig_msg = owner(n, d, enc_msg)
   elif selection == '3':
     loop = False
+    print("Bye for now!")
