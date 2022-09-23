@@ -3,18 +3,12 @@ from proj1_keygen import *
 from primegenerator import *
 from Fast_Expo_encrypt_decrypt import *
 
-primeNumber = -1
-p = -1
-q = -1
 
+primeNumList, a_list = get_numbers()
+prime = test_prime_number()
+p, q = get_p_and_q()
 
-for i in range(0, 2):
-  primeNumber = get_prime_number()
-  p = primeNumber
-  primeNumber = get_prime_number()
-  q = primeNumber
-
-  print("p = " + str(p) + " q = " + str(q))
+print("p = " + str(p) + " " + "q = " + str(q))
 
 msg = 'gonna ad hominem my ancestors, periodt'
 
