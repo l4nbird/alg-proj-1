@@ -57,9 +57,8 @@ def get_p_and_q():      # Get p and q from prime list
     return p, q
 
 
-
-primeNumList, a_list = get_numbers()
-prime = test_prime_number()
-p, q = get_p_and_q()
-
+def call_prime_functions():
+    get_numbers()
+    test_prime_number()
+    get_p_and_q()
 
