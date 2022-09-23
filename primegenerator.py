@@ -26,7 +26,7 @@ def get_numbers(x = 1000000):  # n = 1,000,000
     n = random.randint(x, 10*x) # Get random integer between 1,000,000 and 10n
 
 
-    while len(primeNumList) < 20:
+    while len(primeNumList) <= 20:
         if (n % 2) != 0 and (n % 3) != 0 and (n % 5) != 0:  # Quickens the process, removes known factors 
             primeNumList.append(n)                          # If it passes the parameters, add it to the primeNumList
             a = random.randint(2, n-1)                      # generates a
