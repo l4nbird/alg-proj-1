@@ -39,7 +39,7 @@ def get_numbers(x = 1000000):  # n = 1,000,000
     return primeNumList, a_list
 
 
-def test_prime_number():
+def test_prime_number(a_list, primeNumList):
     min = 2
     test = True
     prime = []
@@ -50,7 +50,7 @@ def test_prime_number():
     return prime
 
 
-def get_p_and_q():      # Get p and q from prime list
+def get_p_and_q(prime):      # Get p and q from prime list
     p = prime.pop()
     q = prime.pop()
     
