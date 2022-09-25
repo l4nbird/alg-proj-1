@@ -27,7 +27,7 @@ def getPublicKey(p, q):
 def attemptKey(phi):
     return random.randint(0, phi - 1)
 
-# euclid's algorithm, taken from lecture notes
+# euclid's algorithm, taken from geeksforgeeks as lecture notes example did not function properly
 # returns gcd of two inputs
 def gcd(a, b):
     if a == 0:
