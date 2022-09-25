@@ -17,7 +17,7 @@ def getPublicKey(p, q):
         # test if attempt is a valid key
         if (gcd(x, phi)) == 1 and x != 1:
 
-            print(str(x) + ' ' + str(phi))
+            #print(str(x) + ' ' + str(phi))
             found = True
             return x
         else:

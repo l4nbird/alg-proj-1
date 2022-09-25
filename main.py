@@ -6,8 +6,8 @@ from signature import *
 
 # gather prime numbers p and q
 primeNumList, a_list = get_numbers()
-prime = test_prime_number(a_list, primeNumList)
-p, q = get_p_and_q(prime)
+prime = test_prime_number()
+p, q = get_p_and_q()
 
 # calculate other necessary numbers and both RSA keys
 n = p * q
