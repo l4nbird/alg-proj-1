@@ -7,6 +7,9 @@
 
 # encrypts or decrypts a message recursively using fast exponentiation
 # from Algorithms lecture slides
+import unittest
+
+
 def crypt_fastExpo(input, key, n):
     if key == 0:
         return 1
@@ -47,5 +50,3 @@ def to_char(in_ascii):
     for single in in_ascii:
         char_arr.append(chr(single))
     return char_arr
-
-

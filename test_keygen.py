@@ -2,7 +2,7 @@ import unittest
 import proj1_keygen
 import primegenerator
 
-class TestPrimeGenerator(unittest.TestCase):
+class TestKeyGeneration(unittest.TestCase):
     def setUp(self):
         resultP, resultQ = primegenerator.get_p_and_q()
         self.phi = (resultP - 1) * (resultQ - 1)
